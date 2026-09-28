@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#170e20">
+  <meta name="description" content="Бяцхан гэнэтийн бэлэг.">
+  <title>♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scene.js" defer></script>
+</head>
+<body>
+  <main>
+    <canvas id="garden" tabindex="-1" aria-label="3D цэцэг, зүрх. Чирэх эсвэл сумтай товчоор эргүүлнэ."></canvas>
+    <div class="gift-screen" id="gift-screen">
+      <button class="gift" id="gift" aria-label="Гэнэтийн бэлгээ нээх" aria-expanded="false" aria-controls="garden">
+        <span class="gift-icon" aria-hidden="true">🎁</span>
+        <span class="sparkle sparkle-one" aria-hidden="true">✧</span>
+        <span class="sparkle sparkle-two" aria-hidden="true">✦</span>
+        <span class="sparkle sparkle-three" aria-hidden="true">♡</span>
+      </button>
+    </div>
+    <div class="controls" id="controls" aria-label="Бэлгийн удирдлага" hidden>
+      <button id="replay" aria-label="Бэлгээ дахин нээх"><span aria-hidden="true">↺</span></button>
+      <div class="mode-picker" role="group" aria-label="Бэлгийн хэлбэр">
+        <button id="bouquet" aria-label="Цэцгийн баглаа" aria-pressed="true"><span aria-hidden="true">✿</span></button>
+        <button id="dot-heart" aria-label="Гэрэлтэх цэгүүдээр 3D зүрх бүтээх" aria-pressed="false"><span aria-hidden="true">♥</span></button>
+      </div>
+      <button id="love" aria-label="Зүрх нэмэх"><span aria-hidden="true">♡</span></button>
+      <button id="motion" aria-label="Хөдөлгөөнийг түр зогсоох" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+    </div>
+  </main>
+</body>
+</html>
+

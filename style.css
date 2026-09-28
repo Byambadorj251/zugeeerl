@@ -1,0 +1,35 @@
+﻿:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #170e20; color: #ffdaea; font-family: Arial, sans-serif; }
+main { position: relative; height: 100vh; height: 100svh; min-height: 300px; overflow: hidden; background: radial-gradient(ellipse at 50% 45%, #482338 0%, #28152b 38%, #120e1c 78%); }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+.opened canvas { cursor: grab; }
+.opened canvas:active { cursor: grabbing; }
+button { -webkit-tap-highlight-color: transparent; color: inherit; font: inherit; cursor: pointer; }
+button:focus-visible, canvas:focus-visible { outline: 2px solid #ffc1de; outline-offset: 8px; }
+[hidden] { display: none !important; }
+.gift-screen { position: absolute; inset: 0; display: grid; place-items: center; transition: opacity .5s, transform .65s cubic-bezier(.2,.8,.2,1); }
+.gift-screen.leaving { opacity: 0; transform: scale(1.65); pointer-events: none; }
+.gift { position: relative; display: grid; place-items: center; width: 240px; height: 240px; padding: 0; border: 0; border-radius: 50%; background: radial-gradient(circle, #fa9bb720, transparent 69%); animation: float 3.3s ease-in-out infinite; }
+.gift-icon { font-size: 136px; line-height: 1.3; filter: drop-shadow(0 22px 28px #f177ab35); transition: transform .3s; }
+.gift:hover .gift-icon { transform: rotate(-8deg) scale(1.1); }
+.gift:active .gift-icon { transform: rotate(6deg) scale(.94); }
+.sparkle { position: absolute; color: #ffd7b6; animation: twinkle 2.7s ease-in-out infinite; pointer-events: none; }
+.sparkle-one { font-size: 36px; left: 9px; top: 29px; }
+.sparkle-two { font-size: 22px; right: 9px; top: 58px; animation-delay: .6s; }
+.sparkle-three { font-size: 28px; right: 22px; bottom: 22px; color: #ffaacb; animation-delay: 1.2s; }
+.controls { position: absolute; bottom: max(25px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid #ffd8eb1c; border-radius: 40px; background: #2c18298c; backdrop-filter: blur(16px); animation: arrive .65s ease-out both; }
+.controls button { display: grid; place-items: center; width: 45px; height: 45px; border: 0; border-radius: 50%; background: transparent; font-size: 25px; transition: transform .2s, background .2s; }
+.controls button:hover { background: #ffd0e512; transform: translateY(-2px); }
+.controls button:active { transform: scale(.9); }
+.controls #love { color: #ffa8cc; background: #f59bc414; font-size: 30px; }
+.controls #motion { font-size: 18px; }
+.mode-picker { display: flex; gap: 3px; padding: 3px; border-radius: 30px; background: #120e1c66; }
+.mode-picker button[aria-pressed="true"] { background: #f4b6d1; color: #5e2443; box-shadow: 0 2px 15px #f59bc422; }
+.mode-picker #dot-heart { font-size: 23px; }
+@media (max-width: 350px) { .controls { gap: 3px; padding: 7px; } }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+@keyframes twinkle { 0%, 100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes arrive { from { opacity: 0; margin-bottom: -12px; } to { opacity: 1; margin-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
